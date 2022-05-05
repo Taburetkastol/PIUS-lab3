@@ -4,19 +4,19 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Domain\Catalog\Models\Membership;
 
-class DatabaseSeeder extends Seeder
+class MembershipSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            BandsSeeder::class,
-            MusiciansSeeder::class,
-        ]);
+        Membership::factory()
+                ->count(100)
+                ->create();
     }
 }
